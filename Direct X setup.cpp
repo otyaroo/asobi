@@ -1,5 +1,23 @@
 #include "DxLib.h"
 
+class Player {
+private:
+	int x;
+	int y;
+public:
+	void position(int* ,int *) const;
+};
+
+void Player::position(int* p_x, int* p_y) const {	//プレイヤー座標を引数に返す関数。
+	*p_x = x;
+	*p_y = y;
+}
+
+void Jamp(int* p_y) {
+	
+}
+
+
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -7,6 +25,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
+
+
 
 	DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
 

@@ -4,8 +4,10 @@ class Player {
 private:
 	int x;
 	int y;
+	bool flag;
 public:
 	void position(int* ,int *) const;
+	void Jamp(int *);
 };
 
 void Player::position(int* p_x, int* p_y) const {	//プレイヤー座標を引数に返す関数。
@@ -13,8 +15,9 @@ void Player::position(int* p_x, int* p_y) const {	//プレイヤー座標を引数に返す関
 	*p_y = y;
 }
 
-void Jamp(int* p_y) {
-	
+void Player::Jamp(int* p_y) {
+	if (!flag) { return; } //ジャンプ中フラグ　falseならジャンプ中ではない。
+
 }
 
 

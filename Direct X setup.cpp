@@ -1,35 +1,25 @@
-#include "DxLib.h"
-
-void jump() {
-
-}
-
+#include "DirectX_Input.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	double Player_X = 0;
-	double Player_Y = 0;
-	double JumpPower = 0;
-
+	SetGraphMode(800, 600, 16);
+	ChangeWindowMode(TRUE);//ウィンドウモードで起動
+	char keys[256]; //キーの押下を格納する配列。
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
-
 	SetDrawScreen(DX_SCREEN_BACK);
 	while (true) {
-		if (Player_Y > 300) {
-			Player_Y = 300;
-			JumpPower = 0;
-		}
 		
-		if ((Key & PAD_INPUT_A) && Player_Y == 300) JumpPower = 20;
-
-
+		//KeyShow(keys);
 		DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
+		WaitKey();
+		ClearDrawScreen();
+		ScreenFlip();
 	}
-	WaitKey();				// キー入力待ち
+				// キー入力待ち
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

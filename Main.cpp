@@ -1,7 +1,7 @@
 #include "initialize.h"
 #include "Input.h"
 #include "Jump.h"
-
+#include "Move.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -20,6 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 		
 		KeyShow(Keys);
+		Move(&Player_X, Keys);
 		Jump(&JumpPower, &Player_Y, Keys);
 		DrawPixel(Player_X, Player_Y, GetColor(255, 255, 255));	// 点を打つ
 		

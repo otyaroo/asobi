@@ -2,7 +2,7 @@
 
 void Jump(int* JumpPower, int* Player_Y, char* Keyinput) {
 	if (Keyinput[KEY_INPUT_Z] == 1 && *Player_Y == 300) {
-		*JumpPower = -20;
+		*JumpPower = -10;
 	}
 
 	*JumpPower += 1;

@@ -1,4 +1,4 @@
-#include "DirectX_Input.h"
+#include "Input.h"
 
 void KeyShow(char* Keyinput) {
 	GetHitKeyStateAll(Keyinput);//ƒL[‚Ì‰Ÿ‰ºó‘Ô‚ğŠi”[B

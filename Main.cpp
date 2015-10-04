@@ -1,5 +1,5 @@
 #include "initialize.h"
-#include "DirectX_Input.h"
+#include "Input.h"
 #include "Jump.h"
 
 

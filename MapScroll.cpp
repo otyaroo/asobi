@@ -4,7 +4,7 @@
 #define MAP_WIDTH 10
 #define MAP_HEIGHT 8
 
-int MapDatas[MAP_HEIGHT][MAP_WIDTH] = {
+const int MapDatas[MAP_HEIGHT][MAP_WIDTH] = {
 
 	{ 0,0,0,0,0,0,0,0,0,0 },
 	{ 0,1,0,0,0,0,0,0,0,0 },

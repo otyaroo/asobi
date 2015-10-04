@@ -1,7 +1,9 @@
+#pragma once
 #include "initialize.h"
 #include "Input.h"
 #include "Jump.h"
 #include "Move.h"
+#include "MapScroll.h"
 
 // ÉvÉçÉOÉâÉÄÇÕ WinMain Ç©ÇÁénÇ‹ÇËÇ‹Ç∑
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -19,6 +21,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		SetDrawScreen(DX_SCREEN_BACK);
 		ClearDrawScreen();
 		
+		MapDraw();
 		KeyShow(Keys);
 		Move(&Player_X, Keys);
 		Jump(&JumpPower, &Player_Y, Keys);

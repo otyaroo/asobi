@@ -13,3 +13,5 @@ void MapDraw();
 //------ˆÚ“®‚Æ‚¢‚¤‚©À•W‚ğ“®‚©‚·‚¾‚¯
 void Move(int* Player_X, const char* Keys);
 
+
+void Load_Yukari(int*);

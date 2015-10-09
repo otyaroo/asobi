@@ -1,15 +1,19 @@
 #pragma once
 #define _CRTDBG_MAP_ALLOC
-#include "initialize.h"
-#include "Input.h"
-#include "Jump.h"
-#include "Move.h"
-#include "MapScroll.h"
 
-#include <stdlib.h>
-#include <crtdbg.h>
+#include "Header.h"
+
+#include <stdlib.h>		//メモリリーク検出用
+#include <crtdbg.h>		//メモリリーク検出用
 
 using namespace std;
+
+int JumpPower = 0;
+int Player_X = 60;
+int Player_Y = 0;
+char Keys[256];
+
+
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -23,12 +27,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 	
 	
-
+//----------------------------------------------------------------------------------------------------------------
 	while (true) {
 		SetDrawScreen(DX_SCREEN_BACK);
 		ClearDrawScreen();
 		
-		MapDraw();
+		//MapDraw();
 		KeyShow(Keys);
 		Move(&Player_X, Keys);
 		Jump(&JumpPower, &Player_Y, Keys);
@@ -38,7 +42,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();
 	}
 				// キー入力待ち
-
+//----------------------------------------------------------------------------------------------------------------
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 	
 	_CrtDumpMemoryLeaks();		//メモリリークレポートを [出力] ウィンドウのデバッグペインに出力します。 

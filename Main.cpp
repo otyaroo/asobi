@@ -9,8 +9,8 @@
 using namespace std;
 
 int JumpPower = 0;
-int Player_X = 60;
-int Player_Y = 0;
+double Player_X = 60;
+double Player_Y = 0;
 
 
 

@@ -1,6 +1,6 @@
 #include "Move.h"
 
-void Move(int* Player_X, const char* Keys) {
+void Move(double* Player_X, const char* Keys) {
 	if (Keys[KEY_INPUT_RIGHT] == 1) {
 		*Player_X += 2;
 	}

@@ -1,6 +1,6 @@
 #include "Jump.h"
 
-void Jump(int* JumpPower, int* Player_Y, const char* Keyinput) {
+void Jump(int* JumpPower, double* Player_Y, const char* Keyinput) {
 	if (Keyinput[KEY_INPUT_Z] == 1 && *Player_Y == 300) {
 		*JumpPower = -20;
 	}

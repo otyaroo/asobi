@@ -46,7 +46,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			DrawLine(Player_X + Player_Width, 0, Player_X + Player_Width, 600, GetColor(255, 255, 0)); //右判定用
 			DrawLine(0, Player_Y, 800, Player_Y, GetColor(255, 255, 0));//上判定用
 			DrawLine(0, Player_Y + Player_Height, 800, Player_Y + Player_Height, GetColor(255, 255, 0));//下判定用
-		}
+		}	//若干ラインがゆかりさんより遅れてるように見える。判定時にどういうことになるのか…？
 																									//MapDraw();
 		KeyShow(Keys);
 		Move(&Player_X, Keys);

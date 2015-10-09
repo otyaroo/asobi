@@ -50,7 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 																									//MapDraw();
 		KeyShow(Keys);
 		Move(&Player_X, Keys);
-		Jump(&JumpPower, &Player_Y, Keys);
+		Jump(&JumpPower, &Player_Y, Keys,&jump_temp,&jump_temp);	//Verlet積分？なのを入れてみたよ。
 		DrawExtendGraph(Player_X -12 , Player_Y - 15, Player_X +52, Player_Y + 85 ,yukari[22], true);	//幅は64,高さは100で固定。それで二倍よ。
 		
 		

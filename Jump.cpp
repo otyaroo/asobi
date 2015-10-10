@@ -1,8 +1,9 @@
-#include "Jump.h"
+#include "DxLib.h"
+#include "Header.h"
 
-void Jump(int* JumpPower, double* Player_Y, const char* Keyinput,int* jump_temp, int* jump_prev) {
+void Jump(int* JumpPower, double* Player_Y, const char* Keyinput, int* jump_temp, int* jump_prev, bool gnd) {
 	*jump_temp = *Player_Y;
-	if (Keyinput[KEY_INPUT_Z] == 1 && *Player_Y == 300) {
+	if (Keyinput[KEY_INPUT_Z] == 1 && gnd) {
 		*JumpPower = -20;
 	}
 
@@ -12,8 +13,9 @@ void Jump(int* JumpPower, double* Player_Y, const char* Keyinput,int* jump_temp,
 
 	*jump_prev = *jump_temp;
 	
-	if (*Player_Y > 300) {	//接地しているかの判定　//今はYが300以下なら接地という条件
-		*Player_Y = 300;
+	if (gnd) {	//接地しているかの判定　
+		int y = *Player_Y / 80;
+		*Player_Y = y * 80;
 		*JumpPower = 0;
 	}
 }

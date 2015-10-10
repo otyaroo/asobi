@@ -1,8 +1,8 @@
-#include "MapScroll.h"
+#include "DxLib.h"
 
 #define MAP_SIZE 64
-#define MAP_WIDTH 10
-#define MAP_HEIGHT 8
+#define MAP_WIDTH 80
+#define MAP_HEIGHT 80
 
 const int MapDatas[MAP_HEIGHT][MAP_WIDTH] = {
 
@@ -16,11 +16,11 @@ const int MapDatas[MAP_HEIGHT][MAP_WIDTH] = {
 	{ 0,0,0,0,0,0,0,0,0,0 }
 };
 
-void MapDraw() {
+void MapDraw(int* MapObjGraph) {
 	for (int i = 0; i < MAP_HEIGHT; ++i) {
 		for (int j = 0; j < MAP_WIDTH; ++j) {
 			if (MapDatas[i][j] == 0) {
-				DrawBox(j* MAP_SIZE, i* MAP_SIZE, j* MAP_SIZE + MAP_SIZE, i*MAP_SIZE + MAP_SIZE, GetColor(255, 0, 0), TRUE);
+				DrawExtendGraph(j * MAP_WIDTH, i * MAP_HEIGHT, j * MAP_WIDTH + MAP_WIDTH, i * MAP_HEIGHT + MAP_HEIGHT, MapObjGraph[0], true);
 			}
 		}
 	}

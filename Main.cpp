@@ -61,14 +61,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			DrawLine(0, Player_Y, 800, Player_Y, GetColor(255, 255, 0));//上判定用
 			DrawLine(0, Player_Y + Player_Height, 800, Player_Y + Player_Height, GetColor(255, 255, 0));//下判定用
 		}	//若干ラインがゆかりさんより遅れてるように見える。判定時にどういうことになるのか…？
-		if (gnd) {
-			DrawFormatString(0, 600, WhiteColor, "True");
-		}else{ DrawFormatString(0, 600, WhiteColor, "False"); }
+		
+		{	//接地判定確認用
+			if (gnd) { DrawFormatString(0, 600, WhiteColor, "True"); }
+			else { DrawFormatString(0, 600, WhiteColor, "False"); }
+		}
+			
 		ScreenFlip();
 
-		if (Keys[KEY_INPUT_ESCAPE] == 1) {
-			break;
-		}
+		if (Keys[KEY_INPUT_ESCAPE] == 1) {break;}		//終了条件 Escを押すと終了
 	}		
 //----------------------------------------------------------------------------------------------------------------
 	DxLib_End();				// ＤＸライブラリ使用の終了処理

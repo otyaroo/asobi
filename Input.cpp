@@ -1,8 +1,8 @@
-#include "Input.h"
+#include "Header.h"
 
 void KeyShow(char* Keyinput) {
 	GetHitKeyStateAll(Keyinput);//キーの押下状態を格納。
-	int showpos = -20;
+/*	int showpos = -20;
 	int showpos2 = -20;
 	if (Keyinput[KEY_INPUT_A] == 1) {
 		showpos += 20;
@@ -48,7 +48,7 @@ void KeyShow(char* Keyinput) {
 		showpos2 += 20;
 		DrawFormatString(600, showpos2, WhiteColor, "左シフトキーが押されました。");
 	}
-
+	*/
 }
 
 //方向キーは３つ同時押しには対応してない。MacbookAir 2012の仕様かもしれないけど。

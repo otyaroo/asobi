@@ -1,8 +1,12 @@
 #pragma once
 #include "DxLib.h"
+#include <iostream>
+#include <fstream> //ダンプ用
 #define MAP_SIZE 64
 #define MAP_WIDTH 80
 #define MAP_HEIGHT 80
+
+
 
 const int MapDatas[8][10] = {
 
@@ -15,7 +19,6 @@ const int MapDatas[8][10] = {
 	{ 0,1,1,1,1,1,1,1,1,0 },
 	{ 0,0,0,0,0,0,0,0,0,0 }
 };
-
 
 //-----キーボードからの入力
 void KeyShow(char *);
@@ -38,5 +41,3 @@ void Move(double* Player_X, const char* Keys);
 
 //------キャラクター画像の読み込み
 void Load_Yukari(int*);
-
-
